@@ -18,6 +18,9 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 .theme-dark .sidebar .num,.theme-dark .sidebar .vol-title,.theme-dark .sidebar .movie-label,.theme-dark .chap-meta{color:#555}
 .theme-dark .chap-header h2{color:#e8e8e8}
 .theme-dark .content p{color:#c8c8c8}
+.theme-dark .nav-btn{background:#181818;border-color:#2a2a2a;color:#aaa}
+.theme-dark .nav-btn:hover{background:#222;border-color:#444;color:#fff}
+.theme-dark .nav-btn.disabled{opacity:.2;cursor:default;background:transparent}
 
 .theme-paper{background:#f5f0e8;color:#3a3a3a}
 .theme-paper .sidebar{background:#ede6d8;border-color:#d5cdbf}
@@ -28,6 +31,9 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 .theme-paper .sidebar .num,.theme-paper .sidebar .vol-title,.theme-paper .sidebar .movie-label,.theme-paper .chap-meta{color:#999}
 .theme-paper .chap-header h2{color:#2a2a2a}
 .theme-paper .content p{color:#444}
+.theme-paper .nav-btn{background:#ede6d8;border-color:#ccc;color:#666}
+.theme-paper .nav-btn:hover{background:#e0d8c8;border-color:#aaa;color:#333}
+.theme-paper .nav-btn.disabled{opacity:.2;cursor:default;background:transparent}
 
 .theme-light{background:#fafafa;color:#333}
 .theme-light .sidebar{background:#f0f0f0;border-color:#e0e0e0}
@@ -38,19 +44,22 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 .theme-light .sidebar .num,.theme-light .sidebar .vol-title,.theme-light .sidebar .movie-label,.theme-light .chap-meta{color:#999}
 .theme-light .chap-header h2{color:#222}
 .theme-light .content p{color:#444}
+.theme-light .nav-btn{background:#f0f0f0;border-color:#d0d0d0;color:#666}
+.theme-light .nav-btn:hover{background:#e0e0e0;border-color:#aaa;color:#222}
+.theme-light .nav-btn.disabled{opacity:.2;cursor:default;background:transparent}
 
 /* 侧边栏 */
 .sidebar{width:220px;border-right:1px solid;padding:24px 0;flex-shrink:0;overflow-y:auto;position:fixed;top:0;left:0;height:100vh;z-index:10;transition:background .3s,border-color .3s}
 .sidebar .logo{font-size:22px;padding:0 20px 16px;border-bottom:1px solid;margin-bottom:12px;font-weight:700;letter-spacing:6px;transition:color .3s}
-.sidebar .vol-title{font-size:11px;padding:8px 20px 4px;font-weight:400;letter-spacing:1px}
-.sidebar .movie-label{font-size:11px;padding:4px 20px 8px;border-bottom:1px solid;margin-bottom:4px}
+.sidebar .vol-title{font-size:11px;padding:8px 20px 4px;font-weight:400;letter-spacing:1px;opacity:.6}
+.sidebar .movie-label{font-size:11px;padding:4px 20px 8px;border-bottom:1px solid;margin-bottom:4px;opacity:.5}
 .sidebar a{display:block;padding:6px 20px;text-decoration:none;font-size:13px;transition:background .15s,color .15s;border-left:2px solid transparent}
 .sidebar a.active{border-left:2px solid}
-.sidebar .num{margin-right:6px;font-size:11px}
+.sidebar .num{margin-right:6px;font-size:11px;opacity:.6}
 
-/* 顶部工具栏 */
+/* 工具栏 */
 .toolbar{position:fixed;top:16px;right:24px;z-index:20;display:flex;gap:8px;align-items:center}
-.toolbar button{background:#1a1a1a;border:1px solid #333;color:#ccc;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;transition:all .2s}
+.toolbar button{background:#1a1a1a;border:1px solid #333;color:#ccc;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;transition:all .2s;font-family:inherit}
 .toolbar button:hover{background:#2a2a2a;color:#fff;border-color:#555}
 .theme-paper .toolbar button{background:#e5ddd0;border-color:#ccc;color:#555}
 .theme-paper .toolbar button:hover{background:#d5cdbf;color:#333}
@@ -59,15 +68,22 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 
 /* 主内容 */
 .main{flex:1;margin-left:220px;padding:48px 64px 80px;max-width:820px}
-
 .chapter{display:none}
 .chapter.active{display:block}
 .chap-header{margin-bottom:36px}
-.chap-meta{font-size:12px;margin-bottom:6px;letter-spacing:1px;transition:color .3s}
-.chap-header h2{font-size:26px;font-weight:600;letter-spacing:2px;transition:color .3s}
-
-.content p{margin-bottom:1.2em;line-height:2;font-size:16px;text-indent:2em;text-align:justify;transition:color .3s}
+.chap-meta{font-size:12px;margin-bottom:6px;letter-spacing:1px;opacity:.5}
+.chap-header h2{font-size:26px;font-weight:600;letter-spacing:2px}
+.content p{margin-bottom:1.2em;line-height:2;font-size:16px;text-indent:2em;text-align:justify}
 .content p:first-of-type{margin-top:0}
+
+/* 章末导航 */
+.chap-nav{margin-top:48px;padding-top:24px;border-top:1px solid;opacity:.3;display:flex;justify-content:space-between;gap:16px;transition:opacity .3s}
+.chap-nav:hover{opacity:1}
+.nav-btn{flex:1;padding:14px 20px;border:1px solid;border-radius:8px;text-decoration:none;font-size:14px;text-align:center;transition:all .2s}
+.nav-btn .nav-title{font-size:12px;opacity:.6;margin-top:2px;display:block}
+.nav-btn.prev{text-align:left}
+.nav-btn.next{text-align:right}
+.nav-btn.disabled{pointer-events:none}
 
 /* 滚动条 */
 .sidebar::-webkit-scrollbar{width:4px}
@@ -75,7 +91,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 
 /* 移动端 */
 @media(max-width:768px){
-  .sidebar{width:100%;height:auto;position:relative;padding:12px 0}
+  .sidebar{width:100%;height:auto;position:relative;padding:12px 0;max-height:40vh}
   .sidebar .logo{font-size:18px;padding:0 16px 12px;margin-bottom:8px}
   .sidebar a{padding:4px 16px;font-size:12px}
   .sidebar .num{font-size:10px}
@@ -84,13 +100,15 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
   .content p{font-size:15px;line-height:1.9}
   .toolbar{top:auto;bottom:16px;right:16px}
   .toolbar button{padding:8px 14px;font-size:14px}
+  .chap-nav{flex-direction:column}
+  .nav-btn{text-align:center!important}
 }
 </style>
 </head>
 <body class="theme-dark">
 <div class="toolbar">
-<button onclick="cycleTheme()" title="切换背景">🎨 主题</button>
-<button onclick="showBookmark()" title="浏览记录">📖 进度</button>
+<button onclick="cycleTheme()">🎨 主题</button>
+<button onclick="showBookmark()">📖 进度</button>
 </div>
 <div class="sidebar">
 <div class="logo">余烬</div>
@@ -191,6 +209,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>---</p>
 <p>**第一章 完**</p>
   </div>
+  <div class="chap-nav">
+    <span class="nav-btn disabled">‹ 上一章</span>
+    <a href="#" onclick="show('v0m0c1')" class="nav-btn next">下一章 ›<br><span class="nav-title">信号</span></a>
+  </div>
 </div>
 <div class="chapter" id="chap_v0m0c1">
   <div class="chap-header">
@@ -254,6 +276,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>苏苒跟上了。李岷是最后一个——他关掉手电，通讯室的屏幕蓝光在他转身的时候熄灭，像是耗尽了最后一点电力。</p>
 <p>走廊里又只剩下红色的应急灯。</p>
 <p>和那支没有人的笔，落在地上的手印旁边。</p>
+  </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c0')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">醒来</span></a>
+    <a href="#" onclick="show('v0m0c2')" class="nav-btn next">下一章 ›<br><span class="nav-title">七个人</span></a>
   </div>
 </div>
 <div class="chapter" id="chap_v0m0c2">
@@ -355,6 +381,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>正在加速。</p>
 <p>向他们这个方向。</p>
   </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c1')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">信号</span></a>
+    <a href="#" onclick="show('v0m0c3')" class="nav-btn next">下一章 ›<br><span class="nav-title">第一次</span></a>
+  </div>
 </div>
 <div class="chapter" id="chap_v0m0c3">
   <div class="chap-header">
@@ -445,6 +475,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>货舱里只剩通风系统的嗡鸣。</p>
 <p>和地上那一滩正在慢慢扩大的深色液体。</p>
   </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c2')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">七个人</span></a>
+    <a href="#" onclick="show('v0m0c4')" class="nav-btn next">下一章 ›<br><span class="nav-title">沉默</span></a>
+  </div>
 </div>
 <div class="chapter" id="chap_v0m0c4">
   <div class="chap-header">
@@ -527,6 +561,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>——给活着的人用的。</p>
 <p>陈烬没有回头。但他知道那是谁放的。</p>
 <p>只有王姐会做这种事。</p>
+  </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c3')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">第一次</span></a>
+    <a href="#" onclick="show('v0m0c5')" class="nav-btn next">下一章 ›<br><span class="nav-title">王姐</span></a>
   </div>
 </div>
 <div class="chapter" id="chap_v0m0c5">
@@ -686,6 +724,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>那卷绷带留在走廊的地上，白色的，干净的。</p>
 <p>再也没有人捡起它。</p>
   </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c4')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">沉默</span></a>
+    <a href="#" onclick="show('v0m0c6')" class="nav-btn next">下一章 ›<br><span class="nav-title">舰桥</span></a>
+  </div>
 </div>
 <div class="chapter" id="chap_v0m0c6">
   <div class="chap-header">
@@ -757,6 +799,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>舰桥的门在雷武身后关闭。密封带在通风口的边缘微微鼓起——被风压顶着，但没有破。</p>
 <p>四个人留在舰桥里。</p>
 <p>一台屏幕上的计时器显示：剩余56小时14分钟。</p>
+  </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c5')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">王姐</span></a>
+    <a href="#" onclick="show('v0m0c7')" class="nav-btn next">下一章 ›<br><span class="nav-title">等待</span></a>
   </div>
 </div>
 <div class="chapter" id="chap_v0m0c7">
@@ -859,6 +905,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>陈烬推开门。</p>
 <p>走廊里，红色的应急灯光铺在他们面前。</p>
 <p>计时器在身后的屏幕上闪烁：51小时08分钟。</p>
+  </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c6')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">舰桥</span></a>
+    <a href="#" onclick="show('v0m0c8')" class="nav-btn next">下一章 ›<br><span class="nav-title">下去</span></a>
   </div>
 </div>
 <div class="chapter" id="chap_v0m0c8">
@@ -969,6 +1019,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>他骗了他们。</p>
 <p>但如果不是那个谎言——他们不会坐在这里。</p>
   </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c7')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">等待</span></a>
+    <a href="#" onclick="show('v0m0c9')" class="nav-btn next">下一章 ›<br><span class="nav-title">结算</span></a>
+  </div>
 </div>
 <div class="chapter" id="chap_v0m0c9">
   <div class="chap-header">
@@ -1037,6 +1091,10 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>陈烬走进门里。身后的门没有关——灰白色的光从门缝里透进来，然后在几分钟后自动收窄，消失。</p>
 <p>五个人在白色灯光下的房间里。</p>
 <p>暂时安全。</p>
+  </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c8')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">下去</span></a>
+    <a href="#" onclick="show('v0m0c10')" class="nav-btn next">下一章 ›<br><span class="nav-title">余烬</span></a>
   </div>
 </div>
 <div class="chapter" id="chap_v0m0c10">
@@ -1107,14 +1165,16 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>不是因为明天会更好。</p>
 <p>是因为明天还有64小时要活。</p>
   </div>
+  <div class="chap-nav">
+    <a href="#" onclick="show('v0m0c9')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">结算</span></a>
+    <span class="nav-btn disabled">下一章 ›</span>
+  </div>
 </div>
 
 </div>
 <script>
 const THEMES = ['theme-dark','theme-paper','theme-light'];
-const THEME_NAMES = {'theme-dark':'深色','theme-paper':'纸页','theme-light':'浅色'};
 
-// ===== 主题切换 =====
 function cycleTheme(){
   const body = document.body;
   const current = THEMES.findIndex(t => body.classList.contains(t));
@@ -1124,7 +1184,6 @@ function cycleTheme(){
   localStorage.setItem('yujin_theme', THEMES[next]);
 }
 
-// ===== 章节导航 =====
 function show(uid){
   document.querySelectorAll('.chapter').forEach(c=>c.classList.remove('active'));
   document.getElementById('chap_'+uid).classList.add('active');
@@ -1134,51 +1193,38 @@ function show(uid){
   localStorage.setItem('yujin_chapter', uid);
 }
 
-// ===== 浏览记录 =====
 function showBookmark(){
   const uid = localStorage.getItem('yujin_chapter');
   const scrollY = localStorage.getItem('yujin_scroll_' + uid);
   if(uid && document.getElementById('chap_'+uid)){
     show(uid);
-    if(scrollY){
-      setTimeout(()=> window.scrollTo({top: parseInt(scrollY), behavior:'smooth'}), 100);
-    }
-    alert('📖 上次读到：' + (document.querySelector('#link_'+uid+' .num')?.textContent || '') + ' 章');
+    if(scrollY) setTimeout(()=> window.scrollTo({top:parseInt(scrollY),behavior:'smooth'}),100);
+    const title = document.querySelector('#link_'+uid+' .num')?.textContent || '';
+    alert('📖 上次读到：第' + title + '章');
   } else {
     alert('📖 还没有阅读记录');
   }
 }
 
-// ===== 滚动位置自动保存 =====
 let saveTimer = null;
 document.addEventListener('scroll', function(){
   clearTimeout(saveTimer);
   saveTimer = setTimeout(()=>{
-    const activeChap = document.querySelector('.chapter.active');
-    if(activeChap){
-      const uid = activeChap.id.replace('chap_','');
-      localStorage.setItem('yujin_scroll_' + uid, window.scrollY);
+    const active = document.querySelector('.chapter.active');
+    if(active){
+      localStorage.setItem('yujin_scroll_' + active.id.replace('chap_',''), window.scrollY);
     }
   }, 300);
 }, {passive:true});
 
-// ===== 恢复主题 =====
-(function restoreTheme(){
-  const saved = localStorage.getItem('yujin_theme');
-  if(saved && THEMES.includes(saved)){
-    document.body.className = saved;
-  }
-})();
-
-// ===== 恢复章节 =====
-(function restoreChapter(){
-  const saved = localStorage.getItem('yujin_chapter');
-  if(saved && document.getElementById('chap_'+saved)){
-    show(saved);
-    const scrollY = localStorage.getItem('yujin_scroll_' + saved);
-    if(scrollY){
-      setTimeout(()=> window.scrollTo({top: parseInt(scrollY), behavior:'instant'}), 50);
-    }
+(function restore(){
+  const savedTheme = localStorage.getItem('yujin_theme');
+  if(savedTheme && THEMES.includes(savedTheme)) document.body.className = savedTheme;
+  const savedChap = localStorage.getItem('yujin_chapter');
+  if(savedChap && document.getElementById('chap_'+savedChap)){
+    show(savedChap);
+    const scrollY = localStorage.getItem('yujin_scroll_' + savedChap);
+    if(scrollY) setTimeout(()=> window.scrollTo({top:parseInt(scrollY),behavior:'instant'}),50);
   } else {
     show('v0m0c0');
   }
