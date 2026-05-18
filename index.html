@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>余烬·异形弧试读</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>余烬·异形弧</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;display:flex;min-height:100vh;background:#0a0a0a;color:#d4d4d4}
-.sidebar{width:220px;background:#111;border-right:1px solid #1a1a1a;padding:24px 0;flex-shrink:0;overflow-y:auto;position:fixed;top:0;left:0;height:100vh;z-index:10}
-.sidebar .logo{font-size:22px;color:#c93636;padding:0 20px 16px;border-bottom:1px solid #1a1a1a;margin-bottom:12px;font-weight:700;letter-spacing:6px}
-.sidebar .vol-title{font-size:11px;color:#555;padding:8px 20px 4px}
-.sidebar .movie-label{font-size:11px;color:#555;padding:4px 20px 8px;border-bottom:1px solid #1a1a1a;margin-bottom:4px}
-.sidebar a{display:block;padding:6px 20px;color:#555;text-decoration:none;font-size:13px;transition:all .15s;border-left:2px solid transparent}
-.sidebar a:hover{color:#ccc;background:#181818}
-.sidebar a.active{color:#fff;background:#1a1a1a;border-left-color:#c93636}
-.sidebar .num{color:#444;margin-right:6px;font-size:11px}
-.main{flex:1;margin-left:220px;padding:48px 64px 80px;max-width:820px}
-.chapter{display:none}
-.chapter.active{display:block}
-.chap-header{margin-bottom:36px}
-.chap-meta{font-size:12px;color:#555;margin-bottom:6px;letter-spacing:1px}
-.chap-header h2{font-size:26px;color:#e8e8e8;font-weight:600;letter-spacing:2px}
-.content p{margin-bottom:1.2em;line-height:2;font-size:16px;color:#c8c8c8;text-indent:2em;text-align:justify}
-.chap-nav{margin-top:48px;padding-top:24px;border-top:1px solid #222;display:flex;justify-content:space-between;gap:16px}
-.nav-btn{flex:1;padding:14px 20px;border:1px solid #2a2a2a;border-radius:8px;text-decoration:none;font-size:14px;color:#aaa;text-align:center;transition:all .2s;background:#181818}
-.nav-btn:hover{background:#222;border-color:#444;color:#fff}
-.nav-btn .nav-title{font-size:12px;opacity:.6;margin-top:2px;display:block}
-.nav-btn.prev{text-align:left}
-.nav-btn.next{text-align:right}
-.nav-btn.disabled{opacity:.2;cursor:default;background:transparent;pointer-events:none}
-@media(max-width:768px){.sidebar{width:100%;height:auto;position:relative;padding:12px 0;max-height:40vh}
-.sidebar .logo{font-size:18px;padding:0 16px 12px}
-.sidebar a{padding:4px 16px;font-size:12px}
-.main{margin-left:0;padding:24px 16px 60px}
-.chap-header h2{font-size:20px}
-.content p{font-size:15px;line-height:1.9}
-.chap-nav{flex-direction:column}
-.nav-btn{text-align:center!important}}
+.s{width:220px;background:#111;border-right:1px solid #1a1a1a;padding:24px 0;position:fixed;top:0;left:0;height:100vh;z-index:10;overflow-y:auto}
+.s .l{font-size:22px;color:#c93636;padding:0 20px 16px;border-bottom:1px solid #1a1a1a;margin-bottom:12px;font-weight:700;letter-spacing:6px}
+.s .v{font-size:11px;color:#555;padding:8px 20px 4px}
+.s .m{font-size:11px;color:#555;padding:4px 20px 8px;border-bottom:1px solid #1a1a1a;margin-bottom:4px}
+.s a{display:block;padding:6px 20px;color:#555;text-decoration:none;font-size:13px;transition:all .15s;border-left:2px solid transparent}
+.s a:hover{color:#ccc;background:#181818}
+.s a.ac{color:#fff;background:#1a1a1a;border-left-color:#c93636}
+.s .num{color:#444;margin-right:6px;font-size:11px}
+.mn{flex:1;margin-left:220px;padding:48px 64px 80px;max-width:820px}
+.c{display:none}
+.c.ac{display:block}
+.ch{margin-bottom:36px}
+.cm{font-size:12px;color:#555;margin-bottom:6px;letter-spacing:1px}
+.ch h2{font-size:26px;color:#e8e8e8;font-weight:600;letter-spacing:2px}
+.ct p{margin-bottom:1.2em;line-height:2;font-size:16px;color:#c8c8c8;text-indent:2em;text-align:justify}
+.cn{margin-top:48px;padding-top:24px;border-top:1px solid #222;display:flex;justify-content:space-between;gap:16px}
+.nb{flex:1;padding:14px 20px;border:1px solid #2a2a2a;border-radius:8px;text-decoration:none;font-size:14px;color:#aaa;background:#181818;transition:all .2s}
+.nb:hover{background:#222;border-color:#444;color:#fff}
+.nt{font-size:12px;opacity:.6;margin-top:2px;display:block}
+.d{opacity:.2;cursor:default;pointer-events:none}
 </style>
 </head>
-<body>
-<div class="sidebar"><div class="logo">余烬</div>
-<div class="vol-title">VOL.01 · 入场</div>
-<div class="movie-label">第1部 · 异形（前8章试读）</div>
-<a href="#" onclick="show('c1')" id="link_c1"><span class="num">01</span> 醒来</a>
+<body><div class="s"><div class="l">余烬</div><div class="v">VOL.01 · 入场</div><div class="m">第1部 · 异形（1-10章）</div><a href="#" onclick="show('c1')" id="link_c1"><span class="num">01</span> 醒来</a>
 <a href="#" onclick="show('c2')" id="link_c2"><span class="num">02</span> 信号</a>
 <a href="#" onclick="show('c3')" id="link_c3"><span class="num">03</span> 七个人</a>
 <a href="#" onclick="show('c4')" id="link_c4"><span class="num">04</span> 深渊</a>
@@ -48,13 +34,9 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <a href="#" onclick="show('c6')" id="link_c6"><span class="num">06</span> 封锁</a>
 <a href="#" onclick="show('c7')" id="link_c7"><span class="num">07</span> 舰桥</a>
 <a href="#" onclick="show('c8')" id="link_c8"><span class="num">08</span> 等待</a>
-</div>
-<div class="main"><div class="chapter" id="chap_c1">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第1章 · 醒来</h2>
-  </div>
-  <div class="content"><p># 第一章·醒来</p>
+<a href="#" onclick="show('c9')" id="link_c9"><span class="num">09</span> 下去</a>
+<a href="#" onclick="show('c10')" id="link_c10"><span class="num">10</span> 结算</a>
+</div><div class="mn"><div class="c" id="chap_c1"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第1章 · 醒来</h2></div><div class="ct"><p># 第一章·醒来</p>
 <p>陈烬醒来的时候，不知道自己在哪里。</p>
 <p>意识先于身体复苏。他感觉到地面——坚硬的金属板，带着纹理的防滑刻痕，冰冷透过单薄的织物贴上脊背。然后是气味：机油、金属、还有某种说不清楚的东西——像医院的消毒水挥发了大半之后留下的底味。通风系统在头顶嗡嗡作响，空气干燥，带着一股反复循环了很久的浊气。</p>
 <p>他睁开眼睛。</p>
@@ -124,14 +106,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>身后传来脚步声。李岷跟上来了。苏苒停了两秒，也跟上来了。</p>
 <p>三个人，走进未知的红色走廊。</p>
 <p>通风管道里，那声音又响了一次。</p>
-<p>比刚才更近。</p></div>
-  <div class="chap-nav"><span class="nav-btn disabled">‹ 上一章</span><a href="#" onclick="show('c2')" class="nav-btn next">下一章 ›<br><span class="nav-title">信号</span></a></div>
-</div><div class="chapter" id="chap_c2">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第2章 · 信号</h2>
-  </div>
-  <div class="content"><p># 第二章·信号</p>
+<p>比刚才更近。</p></div><div class="cn"><span class="nb d">‹ 上一章</span><a href="#" onclick="show('c2')" class="nb">下一章 ›<br><span class="nt">信号</span></a></div></div><div class="c" id="chap_c2"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第2章 · 信号</h2></div><div class="ct"><p># 第二章·信号</p>
 <p>走廊在拐了两个弯之后变宽了。</p>
 <p>应急灯的光线在这里稍微亮了一些，露出了空间的真实面貌——一个十字交叉口，四条通道各通向不同的方向。墙壁上有标识牌，白色的底漆已经泛黄，但上面的文字还能辨认。</p>
 <p>「3号甲板。」李岷抬头看着标识牌。「下层是货舱。上层是舰桥。中间……居住区。」</p>
@@ -186,14 +161,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>「走吧。」他转身，走向门口。</p>
 <p>苏苒跟上了。李岷是最后一个——他关掉手电，通讯室的屏幕蓝光在他转身的时候熄灭，像是耗尽了最后一点电力。</p>
 <p>走廊里又只剩下红色的应急灯。</p>
-<p>和那支没有人的笔，落在地上手印旁边。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c1')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">醒来</span></a><a href="#" onclick="show('c3')" class="nav-btn next">下一章 ›<br><span class="nav-title">七个人</span></a></div>
-</div><div class="chapter" id="chap_c3">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第3章 · 七个人</h2>
-  </div>
-  <div class="content"><p># 第三章·七个人</p>
+<p>和那支没有人的笔，落在地上手印旁边。</p></div><div class="cn"><a href="#" onclick="show('c1')" class="nb">‹ 上一章<br><span class="nt">醒来</span></a><a href="#" onclick="show('c3')" class="nb">下一章 ›<br><span class="nt">七个人</span></a></div></div><div class="c" id="chap_c3"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第3章 · 七个人</h2></div><div class="ct"><p># 第三章·七个人</p>
 <p>通讯室的走廊尽头有一扇防火门，半开着。</p>
 <p>门缝里漏出来的不是灯光——是一缕带着灰尘味的气流，像是门后通向一个更大的空间。陈烬侧身挤过门缝，眼前豁然开朗——是飞船的居住区。一个圆形的大厅，四周均匀分布着六扇门，每扇门上都有编号。大厅中央有一张金属桌，几把椅子翻倒在地。</p>
 <p>桌面上摊着一张纸。</p>
@@ -283,14 +251,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>不是跑向走廊。是跑向那扇防火门——来时的方向。</p>
 <p>身后，通风口里传来一阵急促的、金属摩擦的声音。</p>
 <p>正在加速。</p>
-<p>向他们这个方向。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c2')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">信号</span></a><a href="#" onclick="show('c4')" class="nav-btn next">下一章 ›<br><span class="nav-title">深渊</span></a></div>
-</div><div class="chapter" id="chap_c4">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第4章 · 深渊</h2>
-  </div>
-  <div class="content"><p># 第四章·深渊</p>
+<p>向他们这个方向。</p></div><div class="cn"><a href="#" onclick="show('c2')" class="nb">‹ 上一章<br><span class="nt">信号</span></a><a href="#" onclick="show('c4')" class="nb">下一章 ›<br><span class="nt">深渊</span></a></div></div><div class="c" id="chap_c4"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第4章 · 深渊</h2></div><div class="ct"><p># 第四章·深渊</p>
 <p>他们跑过了三道防火门，才停下来。</p>
 <p>不是因为没有力气了——是因为追他们的声音在第二道门之后消失了。没有跟上来。</p>
 <p>七个人挤在一条狭窄的维修通道里。张磊弯着腰大口喘气，王姐的急救箱在跑动中撞到了墙，卡扣松了，她一边喘一边把它按回去。</p>
@@ -415,14 +376,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>没有人阻止她。</p>
 <p>没有人说话。</p>
 <p>货舱里只剩通风系统的嗡鸣。</p>
-<p>和地上那一滩正在慢慢扩大的深色液体。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c3')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">七个人</span></a><a href="#" onclick="show('c5')" class="nav-btn next">下一章 ›<br><span class="nav-title">寄生</span></a></div>
-</div><div class="chapter" id="chap_c5">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第5章 · 寄生</h2>
-  </div>
-  <div class="content"><p># 第五章·寄生</p>
+<p>和地上那一滩正在慢慢扩大的深色液体。</p></div><div class="cn"><a href="#" onclick="show('c3')" class="nb">‹ 上一章<br><span class="nt">七个人</span></a><a href="#" onclick="show('c5')" class="nb">下一章 ›<br><span class="nt">寄生</span></a></div></div><div class="c" id="chap_c5"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第5章 · 寄生</h2></div><div class="ct"><p># 第五章·寄生</p>
 <p>他们在地下货舱和高层甲板之间的一个设备间里找到了一个活人。</p>
 <p>不是他们队伍里的人。</p>
 <p>是一个穿着和船员制服一样的人——旧的、磨损的、胸口印着Nostromo的标志。他蜷缩在设备间的角落，浑身发抖，脸上沾满了灰黑色的污渍。看到门打开的时候，他没抬头——他把头埋得更低了。</p>
@@ -535,14 +489,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>一根备用铁管。</p>
 <p>——给活着的人用的。</p>
 <p>陈烬没有回头。但他知道那是谁放的。</p>
-<p>只有王姐会做这种事。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c4')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">深渊</span></a><a href="#" onclick="show('c6')" class="nav-btn next">下一章 ›<br><span class="nav-title">封锁</span></a></div>
-</div><div class="chapter" id="chap_c6">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第6章 · 封锁</h2>
-  </div>
-  <div class="content"><p># 第六章·封锁</p>
+<p>只有王姐会做这种事。</p></div><div class="cn"><a href="#" onclick="show('c4')" class="nb">‹ 上一章<br><span class="nt">深渊</span></a><a href="#" onclick="show('c6')" class="nb">下一章 ›<br><span class="nt">封锁</span></a></div></div><div class="c" id="chap_c6"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第6章 · 封锁</h2></div><div class="ct"><p># 第六章·封锁</p>
 <p>系统弹出了第一条更新信息。</p>
 <p>**——场景锁定——** **——主线任务已激活——** **——存活72小时——** **——倒计时开始——**</p>
 <p>沈渊盯着他手腕上方浮现又消失的文字。「72小时——从什么时候开始算的？」</p>
@@ -766,14 +713,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>一个字。</p>
 <p>陈烬没有回头。</p>
 <p>那卷绷带留在走廊的地上，白色的，干净的。</p>
-<p>再也没有人捡起它。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c5')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">寄生</span></a><a href="#" onclick="show('c7')" class="nav-btn next">下一章 ›<br><span class="nav-title">舰桥</span></a></div>
-</div><div class="chapter" id="chap_c7">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第7章 · 舰桥</h2>
-  </div>
-  <div class="content"><p># 第七章·舰桥</p>
+<p>再也没有人捡起它。</p></div><div class="cn"><a href="#" onclick="show('c5')" class="nb">‹ 上一章<br><span class="nt">寄生</span></a><a href="#" onclick="show('c7')" class="nb">下一章 ›<br><span class="nt">舰桥</span></a></div></div><div class="c" id="chap_c7"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第7章 · 舰桥</h2></div><div class="ct"><p># 第七章·舰桥</p>
 <p>到达舰桥的时候，只剩下五个人。</p>
 <p>陈烬、雷武、苏苒、李岷、沈渊。</p>
 <p>没有人提王姐的名字。但每个人都在想。那卷绷带的画面嵌在陈烬的脑子里——白色的，干净的，停在走廊中央。他甩不掉。</p>
@@ -836,14 +776,7 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>「给我四个小时。」他说。然后推开门，消失在走廊的红色灯光里。</p>
 <p>舰桥的门在雷武身后关闭。密封带在通风口的边缘微微鼓起——被风压顶着，但没有破。</p>
 <p>四个人留在舰桥里。</p>
-<p>一台屏幕上的计时器显示：剩余56小时14分钟。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c6')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">封锁</span></a><a href="#" onclick="show('c8')" class="nav-btn next">下一章 ›<br><span class="nav-title">等待</span></a></div>
-</div><div class="chapter" id="chap_c8">
-  <div class="chap-header">
-    <div class="chap-meta">VOL.01·入场 · 第1部·异形</div>
-    <h2>第8章 · 等待</h2>
-  </div>
-  <div class="content"><p># 第八章·等待</p>
+<p>一台屏幕上的计时器显示：剩余56小时14分钟。</p></div><div class="cn"><a href="#" onclick="show('c6')" class="nb">‹ 上一章<br><span class="nt">封锁</span></a><a href="#" onclick="show('c8')" class="nb">下一章 ›<br><span class="nt">等待</span></a></div></div><div class="c" id="chap_c8"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第8章 · 等待</h2></div><div class="ct"><p># 第八章·等待</p>
 <p>雷武走了两个小时。</p>
 <p>舰桥里的时间像被拉长了。没有窗户能看外面——前窗外的深空始终是那种虚无的黑色，没有任何变化。只有控制台上的计时器在走，数字一格一格地跳动。</p>
 <p>沈渊在修控制台。他把一块面板拆开了，露出里面密密麻麻的线路和电路板。他工作的时候很专注，像是回到了自己的领域——代码和线路是他能理解的东西，不像走廊里的黑暗。</p>
@@ -936,18 +869,168 @@ body{font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sa
 <p>苏苒把那罐清洁剂装进口袋。雷武检查了一下信号枪。李岷把螺丝刀换成了他从工具柜里找到的一把重型扳手。</p>
 <p>陈烬推开门。</p>
 <p>走廊里，红色的应急灯光铺在他们面前。</p>
-<p>计时器在身后的屏幕上闪烁：51小时08分钟。</p></div>
-  <div class="chap-nav"><a href="#" onclick="show('c7')" class="nav-btn prev">‹ 上一章<br><span class="nav-title">舰桥</span></a><span class="nav-btn disabled">下一章 ›</span></div>
-</div></div>
+<p>计时器在身后的屏幕上闪烁：51小时08分钟。</p></div><div class="cn"><a href="#" onclick="show('c7')" class="nb">‹ 上一章<br><span class="nt">舰桥</span></a><a href="#" onclick="show('c9')" class="nb">下一章 ›<br><span class="nt">下去</span></a></div></div><div class="c" id="chap_c9"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第9章 · 下去</h2></div><div class="ct"><p># 第九章·下去</p>
+<p>往下走了三层之后，空气变了。</p>
+<p>不是变差——是变重了。温热的，带着一种潮湿的、有机质腐败的气味，像是什么东西在闷热的环境里反复发酵。应急灯的光线在这里变成了暗黄色，照出一种浑浊的压抑感。</p>
+<p>「环境控制舱的入口在前面。」李岷压低声音。</p>
+<p>通道尽头的门牌写着：ENV CONTROL。门框边缘有一层半透明的薄膜状物质，灰白色的，像是某种分泌物凝固后形成的。</p>
+<p>苏苒伸手碰了一下。指尖立刻传来一种湿润的、油腻的触感。那层膜不是死的——它微微回缩了一下。</p>
+<p>她缩回手。</p>
+<p>「它在覆盖整艘船。」</p>
+<p>雷武把信号枪从腰间抽出来，检查了一下弹仓。三发照明弹，每一发都能在一千度的高温下燃烧三十秒。</p>
+<p>「进去之后，我打第一发。」他说。「趁着它被光照瞎的时候，找到逃生舱的位置。」</p>
+<p>「如果逃生舱不能用呢？」苏苒问。</p>
+<p>「那就找第二个方案。」</p>
+<p>「第二个方案是什么？」</p>
+<p>雷武没有回答。因为他没有第二个方案。</p>
+<p>陈烬推开了环境控制舱的门。</p>
+<p>门后的景象让所有人都停下来。</p>
+<p>这不是他们想象中的巢穴。不是分泌物的隧道、不是黏液的海洋——这是一个改造过的工业空间。控制管线被扯断后又重新编织，形成了悬挂在天花板上的网状结构。金属地板被腐蚀出了不规则的孔洞，露出下一层的管线。中央有一个隆起的结构——用飞船上的隔热材料、金属碎片和那层灰白色的分泌物堆砌而成。像是一个茧。一个还在生长的茧。</p>
+<p>茧的底部，散落着几件灰色的连体服。</p>
+<p>——有人在里面诞生了。也有人死在了这里。</p>
+<p>沈渊没有下来是对的。这个画面不是每个人都能承受的。</p>
+<p>「它在里面吗？」苏苒的声音压到了最低。</p>
+<p>陈烬扫视整个空间。没有看到那个灰白色的躯体。</p>
+<p>「不在。」</p>
+<p>「那么它——」</p>
+<p>身后传来一个声音。</p>
+<p>不是脚步声。是通风管道里什么东西在调整姿势时，骨骼与金属壁碰擦的声响。</p>
+<p>在他们头顶。</p>
+<p>而且很近。</p>
+<p>雷武没有犹豫。他抬手，对准天花板的方向扣动了信号枪的扳机。</p>
+<p>照明弹拖着炽白色的尾焰射向天花板，撞在管道上炸开。一千度的白光瞬间填满了整个空间——影子被照得无处可藏。</p>
+<p>它在那里。</p>
+<p>倒挂在天花板顶部的管道上。四肢反向扣住金属管的边缘，头部微微偏转，没有眼睛的脸正对着他们。被白光照射到的皮肤表面开始冒烟——它的外分泌层在高热下蒸发，露出下层灰黑色的真皮。</p>
+<p>它发出一声嘶叫。</p>
+<p>声音不大。但频率很高——像一把尖锐的金属片在耳膜上刮过。</p>
+<p>照明弹的燃烧时间只有三十秒。</p>
+<p>已经过去了五秒。</p>
+<p>「逃生舱——」陈烬吼道。</p>
+<p>李岷的眼睛飞快扫过墙壁上的标识。他的手指向舱室的左后侧——一扇标着ESCAPE POD 1的圆形舱门。</p>
+<p>「在那里！」</p>
+<p>距离大约二十米。要穿过中央那个茧。二十米——平时只需要十秒。但那只东西在天花板上，正在调整位置。</p>
+<p>「我拖住它。」雷武把打空的信号枪扔在地上，从腰间抽出那罐助燃剂。</p>
+<p>「你拿什么拖？」</p>
+<p>雷武没有回答。他拧开助燃剂的盖子，把液体倒在自己面前的地板上——一条横线，像一条边界。</p>
+<p>「你们跑过去。它经过这条线的时候——会烧起来。」</p>
+<p>「你还在线这边！」</p>
+<p>「所以我不能经过它。」</p>
+<p>陈烬看着雷武。雷武没有看他。</p>
+<p>「走。」雷武说。</p>
+<p>苏苒第一个动了。她冲过中央的茧，脚踩在散落的连体服上，发出布料撕裂的声响。李岷紧跟着她。</p>
+<p>陈烬是最后一个。他冲出去之前回头看了一眼——</p>
+<p>天花板上的那个东西松开了爪子。</p>
+<p>它在坠落。</p>
+<p>雷武把打火机扔进了地上的助燃剂里。</p>
+<p>火焰腾起的瞬间，整个环境控制舱被橙黄色的光照亮了。助燃剂沿着他预先倾倒的轨迹蔓延，形成了一道火墙。那只坠落中的生物被火焰的气流带偏了方向——它落在了火墙的另一侧，距离雷武不到两米。</p>
+<p>但它没有冲过来。</p>
+<p>火焰。</p>
+<p>它不喜欢火焰。</p>
+<p>雷武站在火墙的这一边，和那只生物隔着一道燃烧的边界。他的影子在火光中拉得很长。</p>
+<p>「走！」他对陈烬吼道。</p>
+<p>陈烬转身，冲向逃生舱。</p>
+<p>苏苒已经打开了圆形舱门。里面是一个标准的双人逃生舱——空间狭小，两个座位，安全带悬挂在两侧。</p>
+<p>双人。</p>
+<p>而他们有四个人。</p>
+<p>「挤一挤。」苏苒说。她的声音很平稳。「逃生舱的设计容量是四个人紧急避难。只是不符合安全规范。」</p>
+<p>李岷第一个爬进去。然后是苏苒。陈烬回头看了一眼——雷武还在那道火墙后面。</p>
+<p>助燃剂不会烧太久。最多两分钟。</p>
+<p>「雷武——」</p>
+<p>「我看到另一个逃生舱了。」雷武的声音从火墙那边传来。「在对面。我去那边。」</p>
+<p>他撒谎。陈烬知道他在撒谎。这间舱室里只有一个逃生舱。</p>
+<p>「雷武——」</p>
+<p>「你们先走。」雷武的声音忽然平静了下来。「我会跟上来。」</p>
+<p>火焰在减弱。助燃剂烧尽了。地面上留下一道焦黑的痕迹，冒着青烟。</p>
+<p>天花板上的那个东西——不见了。</p>
+<p>但是墙角的阴影里，有什么在移动。</p>
+<p>陈烬被苏苒拽进了逃生舱。舱门合上的瞬间——他看到雷武背对着他，面对着那片阴影。</p>
+<p>舱门关闭。</p>
+<p>发射程序启动。</p>
+<p>逃生舱与飞船脱离的震动传遍整个舱体。加速度把陈烬压进座椅里。</p>
+<p>透过舷窗，他看到了Nostromo号。</p>
+<p>飞船的轮廓在黑暗中越来越小。它的船体上有几处灯光还在亮，像一座正在沉没的城市里最后的窗口。</p>
+<p>其中一个窗口——环境控制舱的位置——突然亮起了一道橙色的光。</p>
+<p>不是爆炸。</p>
+<p>是火。</p>
+<p>雷武。</p>
+<p>陈烬盯着那个光点，直到它消失在黑暗中。</p>
+<p>逃生舱里没有人说话。</p>
+<p>发动机自动关闭。舱体进入惯性滑行。舷窗外是无尽的深空，和越来越远的飞船残骸。</p>
+<p>系统提示音在舱内响起：</p>
+<p>**——主线任务：存活72小时——已完成——** **——积分结算中——** **——即将返回中转空间——**</p>
+<p>剩余53小时12分钟——他们只用了不到19个小时就完成了任务。</p>
+<p>但没有人觉得这是胜利。</p>
+<p>逃生舱的舷窗外，Nostromo号的最后一点火光也熄灭了。</p>
+<p>剩下的只有黑暗。</p>
+<p>和四个幸存者之间，那道还没来得及说出口的沉默。</p>
+<p>——雷武没有跟上来。</p>
+<p>陈烬闭上了眼睛。</p>
+<p>耳边是苏苒极轻的一句话。</p>
+<p>「……他骗了我们。」</p>
+<p>是的。</p>
+<p>他骗了他们。</p>
+<p>但如果不是那个谎言——他们不会坐在这里。</p></div><div class="cn"><a href="#" onclick="show('c8')" class="nb">‹ 上一章<br><span class="nt">等待</span></a><a href="#" onclick="show('c10')" class="nb">下一章 ›<br><span class="nt">结算</span></a></div></div><div class="c" id="chap_c10"><div class="ch"><div class="cm">VOL.01·入场 · 第1部·异形</div><h2>第10章 · 结算</h2></div><div class="ct"><p># 第十章·结算</p>
+<p>中转空间不是他们想象中的任何样子。</p>
+<p>没有白色的房间，没有等待的大厅。眼前的景象从逃生舱的金属内壁直接切换到了一片灰白色的空间——像是站在一片没有边界的雾中。脚下是看不见的平面，头顶是同样灰白的光。</p>
+<p>系统提示音不是从外部传来的——是直接在意识里出现的。</p>
+<p>**——积分结算——**</p>
+<p>**主线任务：存活72小时（实际用时18小时47分钟）** **完成度：100%** **基础积分：3000点**</p>
+<p>**支线发现：船员日志** **完成度：100%** **奖励积分：500点**</p>
+<p>**支线发现：飞船录音** **完成度：100%** **奖励积分：500点**</p>
+<p>**团队存活人数：4人** **团队存活奖励：2000点（每人分摊500点）**</p>
+<p>**总积分：4500点**</p>
+<p>**——兑换列表已解锁——**</p>
+<p>然后眼前出现了一列列表。不是弹窗——是一段信息直接进入了记忆，像是他本来就知道这些内容。但仔细去想的时候，又能清晰地「看到」每一项的细节。</p>
+<p>陈烬没有去看兑换列表。他抬起头。</p>
+<p>苏苒站在几米之外，也在看同一片虚空中的信息。李岷站在她旁边，表情空白。沈渊站在更远的地方，正在用手指在空中划动——像是在操作一个看不见的界面。</p>
+<p>四个人。</p>
+<p>没有雷武。</p>
+<p>陈烬的胃缩了一下。</p>
+<p>但他还没来得及开口——</p>
+<p>雾中出现了一道影子。</p>
+<p>一个人影。步伐不快不慢，带着一种熟悉的、沉稳的节奏。</p>
+<p>雷武从雾中走出来。外套烧掉了一半，左臂上有一道很长的灼伤，脸上全是灰和烟熏的痕迹。但他的眼睛是睁着的。他看到陈烬的时候，嘴角微微动了一下——不是笑，是一种「你看，我没死」的表情。</p>
+<p>「你——」苏苒的声音卡住了。</p>
+<p>「环境控制舱下面还有一个应急逃生管。」雷武说。「直通船体外部。不是逃生舱——没有引擎，没有导航——就是个带氧气罐的发射管。那个写日志的人留下的。他给自己留了一条后路，没用上。」</p>
+<p>雷武停了一下。</p>
+<p>「他用不上了。我用上了。」</p>
+<p>没有人说话。苏苒站在原地，看着雷武脸上的灰和烟熏的痕迹，看着他被烧掉一半的外套，看着他左臂上那道还在渗血的灼伤。</p>
+<p>她走过去，抬手——不是拥抱，是用拳头捶了一下他的肩膀。</p>
+<p>雷武被捶得往后晃了半步。</p>
+<p>然后他笑了一下。这一次是真的笑了。</p>
+<p>陈烬站在原地，没有说话。但他紧握的手指松开了。</p>
+<p>五个人站在灰白色的空间里。四个完整的。一个带着伤，但完整的。</p>
+<p>系统提示再次浮现。</p>
+<p>**——休息空间已开启——** **——进入下一场景前，你有72小时自由时间——**</p>
+<p>灰白色的雾向两侧退去，露出一扇门。普通的门。没有标识，没有编号——就是一扇刷着白漆的金属门，有一个圆形的把手。</p>
+<p>李岷走过去，转动把手，推开门。</p>
+<p>门后是一个房间。大约三十平方米。几张床铺，一张桌子，几把椅子，一个简易的洗手台。墙上有插座和通风口。天花板上有灯——白色的，稳定的，不是红色的应急灯光。</p>
+<p>不是什么豪华的地方。</p>
+<p>但这是他们几十个小时以来，第一次看到正常的灯光。</p>
+<p>沈渊第一个走进房间。他在门口的椅子上坐下来，摘下眼镜，用手掌揉了揉脸。</p>
+<p>苏苒走到墙边，靠着墙滑坐下来。</p>
+<p>李岷站在房间中央，环顾了一圈，然后开始检查墙上的插座和通风口——职业习惯。</p>
+<p>雷武没有进来。他靠在门外的墙上，从口袋里摸出了一根皱巴巴的烟。</p>
+<p>他看了陈烬一眼。</p>
+<p>「别告诉你他们我在飞船上找到的。」</p>
+<p>陈烬没有回答。他站在门槛上，回头看了一眼那条灰白色的「走廊」。</p>
+<p>那里什么也没有。只有雾。</p>
+<p>但他们是从那里活着走出来的。</p>
+<p>五个人。</p>
+<p>雷武点燃了烟。烟雾在白色灯光下升起来。他吸了一口，吐出来。</p>
+<p>「这只是开始。」他说。</p>
+<p>声音不大。</p>
+<p>但陈烬知道，他说的是真的。</p>
+<p>会继续死人的。会继续有人不回来的。会有更多像张磊那样睁着眼睛倒在地上的人。会有更多像王姐那样被拖进黑暗的人。也会有更多像刚才那样——失去又找回的时刻。</p>
+<p>但此刻。</p>
+<p>此刻烟雾还在升腾。雷武还在抽烟。苏苒在墙角闭着眼睛。沈渊把眼镜擦干净了重新戴上。李岷在检查通风口是否牢固。</p>
+<p>五个人。</p>
+<p>都活着。</p>
+<p>够了。</p>
+<p>陈烬走进门里。身后的门没有关——灰白色的光从门缝里透进来，然后在几分钟后自动收窄，消失。</p>
+<p>五个人在白色灯光下的房间里。</p>
+<p>暂时安全。</p></div><div class="cn"><a href="#" onclick="show('c9')" class="nb">‹ 上一章<br><span class="nt">下去</span></a><span class="nb d">下一章 ›</span></div></div></div>
 <script>
-function show(uid){
-  document.querySelectorAll('.chapter').forEach(c=>c.classList.remove('active'));
-  document.getElementById('chap_'+uid).classList.add('active');
-  document.querySelectorAll('.chap-link').forEach(l=>l.classList.remove('active'));
-  document.getElementById('link_'+uid).classList.add('active');
-  window.scrollTo({top:0});
-}
+function show(u){document.querySelectorAll('.c').forEach(c=>c.classList.remove('ac'));document.getElementById('chap_'+u).classList.add('ac');document.querySelectorAll('.s a').forEach(l=>l.classList.remove('ac'));document.getElementById('link_'+u).classList.add('ac');window.scrollTo({top:0});}
 show('c1');
-</script>
-</body>
-</html>
+</script></body></html>
